@@ -3,6 +3,7 @@
 """
 
 
+from typing import List, TypeVar
 from flask import request
 
 
@@ -16,15 +17,14 @@ class Auth:
     """
     
     #Athentication required
-    def require_auth(self, path: str, excluded_path: List[str]) -> bool:
+    def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """A function that makes sure a user is required
         Returns:
                 None, if auth is not required
         """
         return False
 
-
-    def authorization_eheader(self, request=None) -> str:
+    def authorization_header(self, request=None) -> str:
         """Authorization header
         """
         return None
