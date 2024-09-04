@@ -28,6 +28,8 @@ class Auth:
             return True
         if excluded_paths is None or excluded_paths == []:
             return True
+        if path not in excluded_paths:
+            return True
         if path in excluded_paths:
             return False
         else:
