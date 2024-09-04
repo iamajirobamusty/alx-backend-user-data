@@ -2,6 +2,7 @@
 """ A class that manages authentication
 """
 
+
 from typing import List, TypeVar
 from flask import request
 
@@ -54,7 +55,7 @@ class Auth:
         if result is None:
             return None
 
-        return header
+        return result
 
     def current_user(self, request=None) -> TypeVar('User'):
         """A function that returns the current user
