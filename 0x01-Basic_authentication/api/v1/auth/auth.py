@@ -39,6 +39,7 @@ class Auth:
                 elif i[-1] == "*":
                     if path.startswith(i[:1]):
                         return False
+        return True
 
     def authorization_header(self, request=None) -> str:
         """Authorization header
