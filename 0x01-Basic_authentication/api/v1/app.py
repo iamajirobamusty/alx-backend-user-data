@@ -16,10 +16,13 @@ auth = None
 
 AUTH_TYPE = os.getenv("AUTH_TYPE")
 
-#check the type
 if AUTH_TYPE == 'auth':
     from api.v1.auth.auth import Auth
+    A
     auth = Auth()
+elif AUTH_TYPE == 'basic_auth':
+    from api.v1.auth.basic_auth import BasicAuth
+    auth = BasicAuth()
 
 
 @app.before_request
@@ -29,13 +32,14 @@ def before_request():
     if auth is None:
         pass
     else:
-        excluded_list = ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/']
+        excluded_list = ['/api/v1/status/', 
+                '/api/v1/unauthorized/', 
+                '/api/v1/forbidden/']
         if auth.require_auth(request.path, excluded_list):
             if auth.authorization_header(request) is None:
                 abort(401, description='Unauthorized')
             if auth.current_user(request) is None:
                 abort(403, description='Foridden')
-
 
 
 @app.errorhandler(404)
