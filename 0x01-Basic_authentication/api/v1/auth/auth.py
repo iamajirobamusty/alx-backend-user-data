@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
-""" A class that manages authentiction
+""" A class that manages authentication
 """
-
 
 from typing import List, TypeVar
 from flask import request
 
 
 class Auth:
-    """A class that manages authenticatoin
+    """A class that manages authentication
 
     Methods:
-            def require_auth(self, path: str, excluded_paths: List([str]) -> bool:
-            def authorization_header(self, request=None) -> sr:
+            def require_auth(self, path: str, 
+                             excluded_paths: List[str]) -> bool:
+            def authorization_header(self, request=None) -> str:
             def current_user(self, request=None) -> str:
     """
     
-    #Athentication required
+    # Authentication required
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """A function that makes sure a user is required
         Returns:
@@ -53,7 +53,6 @@ class Auth:
             return None
 
         return header
-
 
     def current_user(self, request=None) -> TypeVar('User'):
         """A function that returns the current user
