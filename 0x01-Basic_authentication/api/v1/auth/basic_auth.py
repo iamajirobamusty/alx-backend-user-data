@@ -82,6 +82,7 @@ class BasicAuth(Auth):
         if not isinstance(decode_base64_authorization_header, str):
             return (None, None)
         if ":" not in decode_base64_authorization_header:
-            return None, None
+            return (None, None)
+
         value = decode_base64_authorization_header.split(':')
         return (value[0], value[1])
