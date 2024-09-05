@@ -14,7 +14,7 @@ class BasicAuth(Auth):
     """
     A class that implement the basic form of authentication
     """
-
+    
     # base64
     def extract_base64_authorization_header(
             self,
@@ -119,7 +119,7 @@ class BasicAuth(Auth):
                     return user
         except Exception:
             return None
-    
+
     def current_user(self, request=None) -> TypeVar('User'):
         """A function that overloads the authroization and retrieve hte user instance
         """
