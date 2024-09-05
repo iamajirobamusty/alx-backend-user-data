@@ -17,7 +17,8 @@ class Auth:
     """
     
     # Authentication required
-    def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
+    def require_auth(self, path: str, 
+                     excluded_paths: List[str]) -> bool:
         """A function that makes sure a user is required
         Returns:
                 True: if path is None
