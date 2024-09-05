@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Basic Authentication
+"""
+Basic Authentication
 """
 
 
@@ -10,7 +11,8 @@ from typing import TypeVar
 
 
 class BasicAuth(Auth):
-    """A class that implement the basic form of authentication
+    """
+    A class that implement the basic form of authentication
     """
 
     # base64
@@ -28,6 +30,7 @@ class BasicAuth(Auth):
             return None
         if not authorization_header.startswith("Basic "):
             return None
+            
         value = authorization_header.split()
         return value[1]
 
