@@ -16,7 +16,7 @@ class Auth:
             def authorization_header(self, request=None) -> str:
             def current_user(self, request=None) -> str:
     """
-    
+
     # Authentication required
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """A function that makes sure a user is required
@@ -43,7 +43,7 @@ class Auth:
                 elif i[-1] == "*":
                     if path.startswith(i[:1]):
                         return False
-         
+
         return True
 
     def authorization_header(self, request=None) -> str:
