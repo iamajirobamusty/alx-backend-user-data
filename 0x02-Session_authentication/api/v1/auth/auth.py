@@ -11,7 +11,7 @@ from flask import request
 class Auth:
     """A class that manages authentication
     Methods:
-            def require_auth(self, path: str, 
+            def require_auth(self, path: str,
                              excluded_paths: List[str]) -> bool:
             def authorization_header(self, request=None) -> str:
             def current_user(self, request=None) -> str:
