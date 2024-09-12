@@ -62,10 +62,10 @@ class DB:
             user_id (int): _description_
         """
         user = self.find_user_by(id=user_id)
-        key, val = next(iter(kwarg.items()))
+        for key, value in kwargs.items():
             if not hasattr(user, key):
                 raise ValueError
-        setattr(user, key, value)
+            setattr(user, key, value)
 
         self._session.commit()
         return None
